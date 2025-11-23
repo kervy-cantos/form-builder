@@ -12,6 +12,7 @@ export interface Size {
 
 export class FormField {
   size: { width: number; height: number }
+  value: string | number | boolean = ''
 
   constructor(
     public id: string,
@@ -21,7 +22,7 @@ export class FormField {
     public options: string[] | undefined = undefined,
     public position: Position = { x: 50, y: 50 },
   ) {
-    this.size = { width: 120, height: 40 } // default
+    this.size = { width: 120, height: 40 }
     if (type === 'select' && !options) this.options = ['Option 1']
   }
 
